@@ -7,9 +7,10 @@ class ProductDao {
         this.common = new daoCommon;
     }
     findAll() {
-        let sqlRequest = 'SELECT * FROM product ORDER BY id ASC';
+        let sqlRequest = 'SELECT p.*, pi.image FROM product p INNER JOIN product_images pi ON p.id = pi.product_id WHERE pi.featured = 1';
         return this.common.findAll(sqlRequest).then(rows => {
             let products = [];
+            // console.log(rows);
             for (const row of rows) {
                 products.push(new Product(
                         row.id,
@@ -23,7 +24,8 @@ class ProductDao {
                         row.power,
                         row.miles,
                         row.description,
-                        row.price
+                        row.price,
+                        row.image
                     )
                 );
             }

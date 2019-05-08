@@ -15,6 +15,7 @@ let init = function() {
         'email TEXT' +
         ')'
     );
+
     db.run('CREATE TABLE if not exists product (' +
         'id INTEGER PRIMARY KEY,' +
         'make TEXT,' +
@@ -28,6 +29,13 @@ let init = function() {
         'miles INTEGER,' +
         'description TEXT,' +
         'price INTEGER' +
+        ')'
+    );
+
+    db.run('CREATE TABLE if not exists product_images (' +
+        'id	INTEGER PRIMARY KEY,' +
+        'image	TEXT,' +
+        'product_id	INTEGER' +
         ')'
     );
     

@@ -1,5 +1,5 @@
 class Product {
-    constructor(id, make, model, year, color, doors, seats, cargo, power, miles, price) {
+    constructor(id, make, model, year, color, doors, seats, cargo, power, miles, description, price, image) {
         this.id = id;
         this.make = make;
         this.model = model;
@@ -10,7 +10,9 @@ class Product {
         this.cargo = cargo;
         this.power = power;
         this.miles = miles;
+        this.description = description;
         this.price = price;
+        this.image = image;
     }
 }
 
